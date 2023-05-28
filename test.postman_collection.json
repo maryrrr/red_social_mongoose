@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "04fb7c28-8bc6-474f-98f1-fad50ce6b859",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27124662",
+		"_collection_link": "https://restless-crescent-664800.postman.co/workspace/Team-Workspace~0d415fd3-99b1-4314-8117-23cf0aba1524/collection/27124662-04fb7c28-8bc6-474f-98f1-fad50ce6b859?action=share&creator=27124662&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/posts",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Ulises\",\r\n\"body\": \"In telling the story of a fatally indecisive character’s inability to choose the proper course to avenge his father’s death, Hamlet explores questions of fate versus free will, whether it is better to act decisively or let nature take its course, and ultimately if anything we do in our time on earth makes any difference. Once he learns his uncle has killed his father, Hamlet feels duty-bound to take decisive action, but he has so many doubts about his situation and even about his own feelings that he cannot decide what action to take\",\r\n\"user\":\"AriadnaGrande\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts/646a822fc2fa7cc5231e01f7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"646a822fc2fa7cc5231e01f7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDcyNzliMDM1ZDA0N2UyZGRlYWI5YWUiLCJpYXQiOjE2ODUyMjQyMDh9.02LPECqLXTBDbUfCQ5JKelPFxrXajQtJgIwSEL6Zgn0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mikel Dunai\",\r\n    \"email\":\"duani@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/posts/id/646a94d402c86efcab68b191",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/posts/id/646a94d402c86efcab68b191",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"id",
+						"646a94d402c86efcab68b191"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Cien años de soledad\",\r\n    \"body\": \"Desde que Úrsula Iguarán se casó con su primo José Arcadio Buendía, teme engendrar un niño con cola de cerdo como consecuencia del parentesco. Por ello, se niega temporalmente a consumar el matrimonio. Esto es causa de que Prudencio Aguilar se burle de José Arcadio Buendía quien, ofendido, lo mata en duelo para salvar su honor. Desde entonces, el fantasma de Aguilar lo persigue y José Arcadio decide irse del pueblo.\",\r\n    \"user\":\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/posts/Cien años",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"Cien años"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/posts/id/64727b3635d047e2ddeab9b7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"id",
+						"64727b3635d047e2ddeab9b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eva \",\r\n    \"email\":\"eva@gmail.com\",\r\n    \"password\":\"1234556\"\r\n    \r\n    \r\n    \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZjYTA2YzYwYjdlODY0NDE2OWZlM2QiLCJpYXQiOjE2ODQ5MzUyNjR9.tPgkIlj0hYzoMzfFE1jOjVgUGPfWzRecmW8avSaowDg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/logout/646ca06c60b7e8644169fe3d",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"logout",
+						"646ca06c60b7e8644169fe3d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"eva@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get logged",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZjYTA2YzYwYjdlODY0NDE2OWZlM2QiLCJpYXQiOjE2ODUxMjIxMTh9.u1HxMrzY2nHx5re_QEn4Zpk5Qi78qCfWvBfSulhkQqA",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZkMzIwZGQ3YWNmMDE0NDZjMTZjM2QiLCJpYXQiOjE2ODUxMjIyMTN9.qJNVrRyzozm2Pwz6hAzWgkSedQvW1hoGge7mtKxcwHw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eva@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZjYTA2YzYwYjdlODY0NDE2OWZlM2QiLCJpYXQiOjE2ODQ4NDA3OTl9.0PchJhcvkS6zu3_ga8zvti7HZHwwrwQweteDUMgYsP4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mikel Dunai\",\r\n    \"email\":\"duani@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZjYTA2YzYwYjdlODY0NDE2OWZlM2QiLCJpYXQiOjE2ODUxMjIxMTh9.u1HxMrzY2nHx5re_QEn4Zpk5Qi78qCfWvBfSulhkQqA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"En busca del tiempo perdido\",\r\n    \"body\": \"En busca del tiempo perdido pretende reproducir los recuerdos de un joven escritor francés de comienzos del siglo XX, y retrata la vida de la clase alta parisina, sus vivencias e inconsistencias. Posee un claro contenido autobiográfico, pues la gran mayoría de sus personajes son inspirados en la propia familia, amigos y conocidos de Proust.\",\r\n    \"user\":\"Maria \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reviews",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZjYTA2YzYwYjdlODY0NDE2OWZlM2QiLCJpYXQiOjE2ODQ4NDA3OTl9.0PchJhcvkS6zu3_ga8zvti7HZHwwrwQweteDUMgYsP4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"646a94d402c86efcab68b191\",\r\n    \"comment\": \"Perrsonalmente me ha encantado. La historia de amoR es tan complicada y retorcida que te engancha hasta el final. La forma que tiene Jane de explicar todo aquello que los personajes sienten y ven es verdaderamente perfecta...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts/reviews/6470f42bf02f88c715c70879",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"reviews",
+						"6470f42bf02f88c715c70879"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/posts/getAll?page=1&limit=10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/posts/getAll?page=1&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"getAll"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Likes",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDcyNzliMDM1ZDA0N2UyZGRlYWI5YWUiLCJpYXQiOjE2ODUyMjQyMDh9.02LPECqLXTBDbUfCQ5JKelPFxrXajQtJgIwSEL6Zgn0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/posts/unlike/64727b3635d047e2ddeab9b7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"unlike",
+						"64727b3635d047e2ddeab9b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get paginacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/posts/getAll?page=1&limit=4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"getAll"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZhOTRkNDAyYzg2ZWZjYWI2OGIxOTEiLCJpYXQiOjE2ODUxODc1ODR9.dBoX2lSQgAbRKqmVvAeLvZUXTitc5xtbnyFAIza2Abs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Hamlet\",\r\n\"body\": \"In telling the story of a fatally indecisive character’s inability to choose the proper course to avenge his father’s death, Hamlet explores questions of fate versus free will, whether it is better to act decisively or let nature take its course, and ultimately if anything we do in our time on earth makes any difference. Once he learns his uncle has killed his father, Hamlet feels duty-bound to take decisive action, but he has so many doubts about his situation and even about his own feelings that he cannot decide what action to take\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts/6471eceecc409403c7163ed1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"6471eceecc409403c7163ed1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Likes",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDcyNzliMDM1ZDA0N2UyZGRlYWI5YWUiLCJpYXQiOjE2ODUyMjQyMDh9.02LPECqLXTBDbUfCQ5JKelPFxrXajQtJgIwSEL6Zgn0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/posts/likes/64727be535d047e2ddeab9bc",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"likes",
+						"64727be535d047e2ddeab9bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Likes",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDcyNzliMDM1ZDA0N2UyZGRlYWI5YWUiLCJpYXQiOjE2ODUyMjQyMDh9.02LPECqLXTBDbUfCQ5JKelPFxrXajQtJgIwSEL6Zgn0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/posts/unlike/64727b3635d047e2ddeab9b7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"unlike",
+						"64727b3635d047e2ddeab9b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/posts/update/64730fc1708d6f985dccfe73",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDczMGNkODJjODE2ZDczNmQxZDlkMjAiLCJpYXQiOjE2ODUyNjE2NzF9.Q46W93gYAnNkyhX02skoovpGVMoULGajsMh_YbeMdGI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"100 años de soledad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts/update/64730fc1708d6f985dccfe73",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"update",
+						"64730fc1708d6f985dccfe73"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDczMGNkODJjODE2ZDczNmQxZDlkMjAiLCJpYXQiOjE2ODUyNjE2NzF9.Q46W93gYAnNkyhX02skoovpGVMoULGajsMh_YbeMdGI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/posts/id/647312ab708d6f985dccfe80",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"id",
+						"647312ab708d6f985dccfe80"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
