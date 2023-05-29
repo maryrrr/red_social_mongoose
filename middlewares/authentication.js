@@ -1,13 +1,15 @@
 const User = require('../models/User');
 const Post = require('../models/Post');
 const jwt = require('jsonwebtoken');
-const { jwt_secret } = require('../config/key.js')
+// const { jwt_secret } = require('../config/key.js')
+require("dotenv").config();
+
 
 
 const authentication = async(req, res, next) => {
     try {
         const token = req.headers.authorization;
-        const payload = jwt.verify(token, jwt_secret);
+        const payload = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: payload._id, tokens: token });
 
     if (!user) {
@@ -52,22 +54,4 @@ const isAuthor = async (req, res, next) => {
   }
 };
 
-
-
-// const isAuthor = async (req, res, next) => {
-//     try {
-//       const post = await Post.findById(req.params._id);
-//       if (!post || !post.userId || !req.user || post.userId.toString() !== req.user._id.toString()) {
-//         return res.status(403).send({ message: 'Este post no es tuyo' });
-//       }
-//       next();
-//     } catch (error) {
-//       console.error(error);
-//       console.log(post);
-//       return res.status(500).send({
-//         error,
-//         message: 'Ha habido un problema al comprobar la autoría del post',
-//       });
-//     }
-//   };
 module.exports = { authentication,isAuthor,isAdmin }
