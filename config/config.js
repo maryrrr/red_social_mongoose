@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const { MONGO_URI } = require("./key");
 require("dotenv").config();
 
 
@@ -9,7 +8,7 @@ const dbConnection = async () => {
         console.log("Base de datos conectada con éxito");
 } catch (error) {
 console.error(error);
-throw new Error("Error a la hora de iniciar la base de datos");
+    throw new Error("Error a la hora de iniciar la base de datos");
 }
 };
 
