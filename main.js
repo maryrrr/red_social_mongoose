@@ -43,3 +43,8 @@
 //     }
 //   }
   
+PORT = 3000
+
+MONGO_URI = 'mongodb+srv://sagader_30:sfJVkGTW1RrjPP6T@cluster0.rpnfkvh.mongodb.net/test?retryWrites=true&w=majority'
+
+JWT_SECRET = "bajolluvia"
