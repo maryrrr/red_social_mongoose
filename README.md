@@ -80,7 +80,7 @@ To run this project, you will need to add the following environment variables to
 
 
 ### Project management with Trello
-    <a href="https://trello.com/b/67D9t8nw/redsocialmongoose">Trello</a>
+    <a href="https://trello.com/b/67D9t8nw/redsocialmongoose?filter=label:green,label:yellow"> Trello</a>
 
 
 
