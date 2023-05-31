@@ -5,7 +5,7 @@ const PostController ={
 
     async create(req,res){
         try {
-            const post= await Post.create(req.body)
+            const post= await Post.create({...req.body,userId:req.user._id})
             //console.log(req.body)
             res.status(201).send(post)
         } catch (error) {
@@ -15,12 +15,8 @@ const PostController ={
     },
     async update(req, res) {
         try {
-          const post = await Post.findByIdAndUpdate(
-            req.params._id,
-            { ...req.body, userId: req.user._id },
-            {
-              new: true,
-            }
+          const post = await Post.findByIdAndUpdate(req.params._id,req.body,
+            {new: true,}
           );
           console.log(req.params._id);
           res.send({ message: "post successfully updated", post });
