@@ -5,16 +5,19 @@ require("dotenv").config();
 
 
 const UserController ={
-
-    async create(req,res,next){
-        try {
-            const user= await User.create(req.body)
-            res.status(201).send(user)
+    async register(req, res, next) {
+		try {
+            const user = await User.create({ ...req.body, role: 'user' });
+            res.status(201).send({ message: 'Usuario registrado con éxito', user });
         } catch (error) {
-            error.origin = 'usuario'
-            next(error)
+            error.origin = 'usuario';
+            error.statusCode = 400;
+            next(error);
         }
-    },
+	},
+
+
+		
     async getAll(req, res) {
 
         try {
@@ -24,6 +27,7 @@ const UserController ={
             console.error(error);
         }
     },
+    
     async login(req, res) {
 
         try {
