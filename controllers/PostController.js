@@ -25,15 +25,15 @@ const PostController ={
         }
       },
 
-    async getAll(req, res) {
+    async getAllPosts(req, res) {
 
         try {
-            const { page = 1, limit = 10 } = req.query
+            //const { page = 1, limit = 6 } = req.query
             const post = await Post.find()
-            .populate("reviews.userId")
-            .limit(limit * 1)
-            .skip((page - 1) * limit);
-            res.send(post)
+            .populate("userId")
+            //.limit(limit)
+            //.skip((page - 1) * limit);
+            res.send({message:"All posts", post})
         } catch (error) {
             console.error(error);
         }
@@ -51,7 +51,7 @@ const PostController ={
             res.status(500).send({ message: 'there was a problem trying to remove the publication' })
         }
     },
-    async getProductsByName(req, res) {
+    async getByTitle(req, res) {
 
         try {
             const post = await Post.find({
@@ -72,14 +72,21 @@ const PostController ={
         console.error(error);
         }
     },
+
     async insertComment(req, res) {
 
         try {
             const post = await Post.findByIdAndUpdate(
             req.params._id,
-            { $push: { reviews: { comment:req.body.comment, userId: req.user._id } } },
+            { $push: { comments: { comment:req.body.comment, userId: req.user._id } } },
             { new: true }
-        );
+        )
+        if (!post) {
+          return res.status(404).send({ message: "Post not found" });
+      }
+
+      console.log("Review added successfully:", post);
+
         res.send(post);
         } catch (error) {
         console.error(error);
@@ -118,6 +125,7 @@ const PostController ={
             res.status(500).send({ message: "Could not delete the like" })
           }
         },
+        
       }
 
 

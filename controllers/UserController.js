@@ -1,20 +1,25 @@
 const User = require('../models/User')
+const Post = require('../models/Post')
 const jwt = require('jsonwebtoken');
-require("dotenv").config();
+require("dotenv").config()
+const bcrypt = require('bcryptjs')
+//const { jwt_secret } = require("../config/key.js");
 
 
 
 const UserController ={
 
-    async create(req,res,next){
-        try {
-            const user= await User.create(req.body)
-            res.status(201).send(user)
-        } catch (error) {
-            error.origin = 'usuario'
-            next(error)
-        }
-    },
+    async register(req, res, next) {
+		try {
+            req.body['password'] = req.body?.password ? bcrypt.hashSync(req.body.password, 10)  : null
+            req.body['password2'] = req.body?.password2 ? bcrypt.hashSync(req.body.password2, 10)  : null
+			const user = await User.create({ ...req.body, role: 'user' })
+			res.status(201).send({ message: 'Usuario registrado con exito', user })
+		} catch (error) {
+			error.origin = 'usuario'
+			next(error)
+		}
+	},
     async getAll(req, res) {
 
         try {
@@ -35,7 +40,7 @@ const UserController ={
         if (user.tokens.length > 4)user.tokens.shift();
         user.tokens.push(token);
         await user.save();
-        res.send({ message: 'Welcome  ' + user.name, token });
+        res.send({ message: 'Welcome  ' + user.name, token ,user});
         } catch (error) {
         console.error(error);
         }
@@ -66,6 +71,21 @@ const UserController ={
         res.status(500).send({ message: "There was a problem with your like" })
     }
 },
+    async getInfo(req, res) {
+        try {
+        const user = await User.findById(req.user._id);
+        const userPosts = await Post.find({ userId: req.user._id });
+        const userPost = { userInfo: user, posts: userPosts };
+
+        res.send({ message:"User and their posts found",userPost} );
+        } catch (error) {
+        console.error(error);
+
+        res.status(500).send({
+            message: "Error trying to get user",
+        });
+        }
+  },
     }
 
 module.exports = UserController;

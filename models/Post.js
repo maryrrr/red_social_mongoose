@@ -5,13 +5,24 @@ const PostSchema = new mongoose.Schema({
     title: String,
     body: String,
     userId: { type: ObjectId, ref: "User" },
-    reviews: [{
-        userId: { type: ObjectId, ref: 'User' },
-        comment: String
-        }],
-    likes: [{ type: ObjectId }],
 
-}, { timestamps: true });
+    comments: [
+        {
+          userId: { type: ObjectId, ref: "User" },
+          comment: {
+            type: String,
+            required: [true, "Your comment is empty?"],
+          },
+        }
+      ],
+      userId: {
+        type: ObjectId,
+        ref: "User",
+      },
+    //   likes: [{ userId: { type: ObjectId, ref: "User" } }],
+     },
+    { timestamps: true }
+  );
 PostSchema.index({
 
     title: "text",
