@@ -14,6 +14,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Por favor rellena tu contraseña"],
         },
+    password2: {
+        type: String,
+        required: [true, "Por favor repite tu contraseña"],
+        },
     tokens:[],
     role: String,
 }, { timestamps: true });
